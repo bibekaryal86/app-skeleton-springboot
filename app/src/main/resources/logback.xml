@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration debug="true">
+    <property name="LOG_PATTERN"
+              value="[%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ, America/Denver}] [spring-service-skeleton,%X{traceId:-},%X{spanId:-}] [${PID:-},%thread] [%level] [%c{1}] --- %msg%n"/>
+
+    <springProfile name="development">
+        <property name="LOG_FILE" value="/JAVA/logs/spring-service-skeleton/spring-service-skeleton"/>
+
+        <appender name="APPLOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${LOG_FILE}.log</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <FileNamePattern>${LOG_FILE}_%d{yyyy-MM-dd}_%i.log</FileNamePattern>
+                <!-- keep 14 days' worth of history -->
+                <maxHistory>14</maxHistory>
+                <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                    <!-- or whenever the File size reaches 10MB -->
+                    <maxFileSize>10MB</maxFileSize>
+                </timeBasedFileNamingAndTriggeringPolicy>
+            </rollingPolicy>
+            <encoder>
+                <pattern>${LOG_PATTERN}</pattern>
+                <charset>utf8</charset>
+            </encoder>
+        </appender>
+
+        <root level="INFO">
+            <appender-ref ref="APPLOG"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="production,docker">
+        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+            <!--
+            replace the encoder block below with the following if using logstash encoder in build.gradle
+            <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+            -->
+            <encoder>
+                <pattern>${LOG_PATTERN}</pattern>
+                <charset>utf8</charset>
+            </encoder>
+        </appender>
+
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </springProfile>
+
+</configuration>

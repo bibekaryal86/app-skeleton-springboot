@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring-service-skeleton
+
+server:
+  servlet:
+    context-path: spring-service-skeleton
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
