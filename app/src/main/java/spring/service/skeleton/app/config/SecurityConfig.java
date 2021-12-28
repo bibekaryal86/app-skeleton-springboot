@@ -6,7 +6,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import spring.service.skeleton.app.util.ConstantsUtils;
+import spring.service.skeleton.app.util.ConstantUtils;
 
 import static org.springframework.http.HttpMethod.GET;
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
@@ -43,8 +43,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser(getSystemEnvProperty(ConstantsUtils.BASIC_AUTH_USR, null))
-                .password("{noop}".concat(getSystemEnvProperty(ConstantsUtils.BASIC_AUTH_PWD, null)))
+                .withUser(getSystemEnvProperty(ConstantUtils.BASIC_AUTH_USR, null))
+                .password("{noop}".concat(getSystemEnvProperty(ConstantUtils.BASIC_AUTH_PWD, null)))
                 .roles("USER");
     }
 }

@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import static java.util.Collections.singletonMap;
 import static spring.service.skeleton.app.util.CommonUtils.getSystemEnvProperty;
-import static spring.service.skeleton.app.util.ConstantsUtils.SERVER_PORT;
+import static spring.service.skeleton.app.util.ConstantUtils.SERVER_PORT;
 
 @Slf4j
 @SpringBootApplication
