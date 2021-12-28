@@ -4,7 +4,7 @@ spring:
 
 server:
   servlet:
-    context-path: spring-service-skeleton
+    context-path: /spring-service-skeleton
 
 management:
   endpoints:
