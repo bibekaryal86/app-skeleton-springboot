@@ -1,4 +1,0 @@
-cron:
-  - description: "ping"
-    url: /tests/ping
-    schedule: every 15 mins
