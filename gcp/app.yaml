@@ -5,10 +5,10 @@ handlers:
   - url: .*
     script: auto
 automatic_scaling:
-  min_instances: automatic
-  max_instances: automatic
-  min_idle_instances: automatic
-  max_idle_instances: 1
+  min_instances: 1
+  max_instances: 3
+  min_idle_instances: 1
+  max_idle_instances: 2
   min_pending_latency: 5000ms
   max_pending_latency: 10000ms
   max_concurrent_requests: 80
