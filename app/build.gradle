@@ -11,7 +11,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath('org.springframework.boot:spring-boot-gradle-plugin:2.6.1')
+        classpath('org.springframework.boot:spring-boot-gradle-plugin:2.6.3')
     }
 }
 
@@ -19,7 +19,7 @@ plugins {
     id 'application'
     id 'java'
     id 'io.freefair.lombok' version '6.3.0'
-    id 'org.springframework.boot' version '2.6.1'
+    id 'org.springframework.boot' version '2.6.3'
 }
 
 repositories {
@@ -31,13 +31,13 @@ bootJar {
 }
 
 dependencies {
-    def springVersion = "2.6.1" // also update version in buildscript and plugin
+    def springVersion = "2.6.3" // also update version in buildscript and plugin
     implementation "org.springframework.boot:spring-boot-starter-actuator:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-web:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-security:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-cache:$springVersion"
 
-    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.10'
     
     // FOR ClassNotFoundException javax.xml.bind.JAXBException
     // implementation 'javax.xml.bind:jaxb-api:2.3.1'
