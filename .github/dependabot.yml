@@ -9,4 +9,3 @@ updates:
     directory: "app/" # Location of package manifests
     schedule:
       interval: "daily"
-    target-branch: "add-dependabot"
