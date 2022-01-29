@@ -2,8 +2,7 @@ name: Update Gradle Wrapper
 
 on:
   schedule:
-    # every week on Monday at 8am
-    - cron: "10 18 * * SAT"
+    - cron: "* * * * SAT"
 
 jobs:
   update-gradle-wrapper:
@@ -14,5 +13,3 @@ jobs:
 
       - name: Update Gradle Wrapper
         uses: gradle-update/update-gradle-wrapper-action@v1
-        with:
-          target-branch: gradle-wrapper-action
