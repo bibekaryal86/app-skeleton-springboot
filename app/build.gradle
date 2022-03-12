@@ -37,7 +37,7 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-security:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-cache:$springVersion"
 
-    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.10'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.11'
     
     // FOR ClassNotFoundException javax.xml.bind.JAXBException
     // implementation 'javax.xml.bind:jaxb-api:2.3.1'
