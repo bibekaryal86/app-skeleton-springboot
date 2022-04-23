@@ -18,7 +18,7 @@ buildscript {
 plugins {
     id 'application'
     id 'java'
-    id 'io.freefair.lombok' version '6.4.2'
+    id 'io.freefair.lombok' version '6.4.3'
     id 'org.springframework.boot' version '2.6.7'
 }
 
