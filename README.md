@@ -43,3 +43,5 @@
      * If not using cache
          * Remove `CacheConfig` from config package
          * Remove `spring-boot-starter-cache` dependency from `build.gradle`
+     * GitHub workflows
+         * Remove `dependabot.yml` in the new app until automated merge is figured out
