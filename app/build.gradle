@@ -40,35 +40,35 @@ dependencies {
     implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.4.0'
     
     // FOR ClassNotFoundException javax.xml.bind.JAXBException
-    // implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
 
     // FOR REST TEMPLATE
-    // implementation 'org.apache.httpcomponents:httpclient:4.5.12'
-    // implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.0'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.12'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.0'
 
     // IF USING JPA
-    // implementation "org.springframework.boot:spring-boot-starter-data-jpa:$springVersion"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa:$springVersion"
 
     // IF USING JDBC
-    // implementation "org.springframework.boot:spring-boot-starter-data-jdbc:$springVersion"
+    implementation "org.springframework.boot:spring-boot-starter-data-jdbc:$springVersion"
 
     // IF USING MONGO
-    // implementation "org.springframework.boot:spring-boot-starter-data-mongodb:$springVersion"
-    // implementation "org.springframework.boot:spring-boot-starter-data-rest:$springVersion"
+    implementation "org.springframework.boot:spring-boot-starter-data-mongodb:$springVersion"
+    implementation "org.springframework.boot:spring-boot-starter-data-rest:$springVersion"
 
     // IF USING SWAGGER
-    // implementation 'io.springfox:springfox-boot-starter:3.0.0'
-    // implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+    //implementation 'io.springfox:springfox-boot-starter:3.0.0'
+    //implementation 'io.springfox:springfox-swagger-ui:3.0.0'
 
     // IF USING APP IN A MICROSERVICES CLUSTER WITH GATEWAY, THIS WILL LOG TRACE/SPAN
-    // implementation 'org.springframework.cloud:spring-cloud-starter-sleuth:3.1.0'
+    //implementation 'org.springframework.cloud:spring-cloud-starter-sleuth:3.1.0'
 
     // FOR TESTING
-    // testImplementation('org.springframework.boot:spring-boot-starter-test:2.3.0.RELEASE') {
-    //     exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-    // }
-    // testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    // testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation('org.springframework.boot:spring-boot-starter-test:2.3.0.RELEASE') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 
     // IF USING ELK STACK OR OTHER JSON LOGGING DRIVER
     // ALSO UPDATE LOGBACK.XML
