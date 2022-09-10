@@ -67,7 +67,7 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test:2.7.3') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
 
     // IF USING ELK STACK OR OTHER JSON LOGGING DRIVER
