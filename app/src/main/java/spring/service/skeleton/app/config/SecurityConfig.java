@@ -1,24 +1,28 @@
 package spring.service.skeleton.app.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
 import spring.service.skeleton.app.util.ConstantUtils;
 
 import static org.springframework.http.HttpMethod.GET;
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 import static spring.service.skeleton.app.util.CommonUtils.getSystemEnvProperty;
 
+@Configuration
 @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig {
 
-    @Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception {
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                .authorizeRequests()
+                .authorizeHttpRequests()
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -28,23 +32,25 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(STATELESS);
+        return httpSecurity.build();
     }
 
-    @Override
-    public void configure(WebSecurity webSecurity) {
-        webSecurity
+    @Bean
+    public WebSecurityCustomizer webSecurityCustomizer() {
+        return web -> web
                 //.ignoring()
-                //.antMatchers("/swagger-ui/")
+                //.requestMatchers("/swagger-ui/")
                 //.and()
                 .ignoring()
-                .mvcMatchers(GET, "/tests/ping");
+                .requestMatchers(GET, "/tests/ping");
     }
 
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser(getSystemEnvProperty(ConstantUtils.BASIC_AUTH_USR, null))
+    @Bean
+    public InMemoryUserDetailsManager userDetailsService() {
+        UserDetails user = User.withUsername(getSystemEnvProperty(ConstantUtils.BASIC_AUTH_USR, null))
                 .password("{noop}".concat(getSystemEnvProperty(ConstantUtils.BASIC_AUTH_PWD, null)))
-                .roles("USER");
+                .roles("USER")
+                .build();
+        return new InMemoryUserDetailsManager(user);
     }
 }

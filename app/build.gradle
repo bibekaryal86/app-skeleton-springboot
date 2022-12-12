@@ -22,6 +22,12 @@ plugins {
     id 'org.springframework.boot' version '3.0.0'
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
 repositories {
     mavenCentral()
 }
