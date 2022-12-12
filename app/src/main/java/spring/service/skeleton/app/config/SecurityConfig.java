@@ -26,8 +26,6 @@ public class SecurityConfig {
                 .anyRequest()
                 .authenticated()
                 .and()
-                .csrf()
-                .disable()
                 .httpBasic()
                 .and()
                 .sessionManagement()
