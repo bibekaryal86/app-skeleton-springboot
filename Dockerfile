@@ -1,4 +1,4 @@
-FROM openjdk:11-jre-slim-bullseye
+FROM eclipse-temurin:17-jre-alpine
 RUN adduser --system --group springdocker
 USER springdocker:springdocker
 ARG JAR_FILE=app/build/libs/spring-service-skeleton.jar
