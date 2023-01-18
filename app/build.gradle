@@ -38,6 +38,9 @@ bootJar {
 
 dependencies {
     def springVersion = "3.0.1" // also update version in buildscript and plugin
+    def swaggerVersion = "3.0.0"
+    def junitVersion = "5.9.2"
+    
     implementation "org.springframework.boot:spring-boot-starter-actuator:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-web:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-security:$springVersion"
@@ -63,22 +66,22 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-data-rest:$springVersion"
 
     // IF USING SWAGGER
-    //implementation 'io.springfox:springfox-boot-starter:3.0.0'
-    //implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+    implementation "io.springfox:springfox-boot-starter:$swaggerVersion"
+    implementation "io.springfox:springfox-swagger-ui:$swaggerVersion"
 
     // IF USING APP IN A MICROSERVICES CLUSTER WITH GATEWAY, THIS WILL LOG TRACE/SPAN
-    //implementation 'org.springframework.cloud:spring-cloud-starter-sleuth:3.1.0'
+    implementation 'org.springframework.cloud:spring-cloud-starter-sleuth:3.1.0'
 
     // FOR TESTING
     testImplementation("org.springframework.boot:spring-boot-starter-test:$springVersion") {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 
     // IF USING ELK STACK OR OTHER JSON LOGGING DRIVER
     // ALSO UPDATE LOGBACK.XML
-    // implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '6.6'
+    implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '6.6'
 }
 
 application {
