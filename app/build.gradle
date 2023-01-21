@@ -37,7 +37,7 @@ bootJar {
 }
 
 dependencies {
-    def springVersion = "3.0.1" // also update version in buildscript and plugin
+    def springVersion = "3.0.2" // also update version in buildscript and plugin
     def swaggerVersion = "3.0.0"
     def junitVersion = "5.9.2"
     
