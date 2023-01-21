@@ -19,7 +19,7 @@ plugins {
     id 'application'
     id 'java'
     id 'io.freefair.lombok' version '6.6.1'
-    id 'org.springframework.boot' version '3.0.1'
+    id 'org.springframework.boot' version '3.0.2'
 }
 
 java {
