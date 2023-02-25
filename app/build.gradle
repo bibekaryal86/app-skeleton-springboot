@@ -70,7 +70,7 @@ dependencies {
     implementation "io.springfox:springfox-swagger-ui:$swaggerVersion"
 
     // IF USING APP IN A MICROSERVICES CLUSTER WITH GATEWAY, THIS WILL LOG TRACE/SPAN
-    implementation 'org.springframework.cloud:spring-cloud-starter-sleuth:3.1.6'
+    implementation 'org.springframework.cloud:spring-cloud-starter-sleuth:3.1.7'
 
     // FOR TESTING
     testImplementation("org.springframework.boot:spring-boot-starter-test:$springVersion") {
