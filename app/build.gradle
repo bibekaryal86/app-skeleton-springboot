@@ -81,7 +81,7 @@ dependencies {
 
     // IF USING ELK STACK OR OTHER JSON LOGGING DRIVER
     // ALSO UPDATE LOGBACK.XML
-    implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '7.2'
+    implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '7.3'
 }
 
 application {
