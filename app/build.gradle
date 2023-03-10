@@ -6,15 +6,6 @@
  * User Manual available at https://docs.gradle.org/7.3.1/userguide/building_java_projects.html
  */
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath('org.springframework.boot:spring-boot-gradle-plugin:3.0.4')
-    }
-}
-
 plugins {
     id 'application'
     id 'java'
@@ -37,7 +28,7 @@ bootJar {
 }
 
 dependencies {
-    def springVersion = "3.0.4" // also update version in buildscript and plugin
+    def springVersion = "3.0.2" // also update plugin
     def swaggerVersion = "3.0.0"
     def junitVersion = "5.9.2"
     
