@@ -7,16 +7,16 @@
     <springProfile name="development">
         <property name="LOG_FILE" value="/JAVA/logs/spring-service-skeleton/spring-service-skeleton"/>
 
-        <appender name="APPLOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <appender name="FILELOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
             <file>${LOG_FILE}.log</file>
-            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
                 <FileNamePattern>${LOG_FILE}_%d{yyyy-MM-dd}_%i.log</FileNamePattern>
                 <!-- keep 14 days' worth of history -->
                 <maxHistory>14</maxHistory>
-                <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                    <!-- or whenever the File size reaches 10MB -->
-                    <maxFileSize>10MB</maxFileSize>
-                </timeBasedFileNamingAndTriggeringPolicy>
+                <!-- Single file size limit -->
+                <maxFileSize>5MB</maxFileSize>
+                <!-- Total files size limit -->
+                <totalSizeCap>100MB</totalSizeCap>
             </rollingPolicy>
             <encoder>
                 <pattern>${LOG_PATTERN}</pattern>
