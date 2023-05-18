@@ -44,7 +44,7 @@ dependencies {
 
     // FOR REST TEMPLATE
     implementation 'org.apache.httpcomponents.client5:httpclient5:5.2.1'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.1'
 
     // IF USING JPA
     implementation "org.springframework.boot:spring-boot-starter-data-jpa:$springVersion"
