@@ -37,7 +37,7 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-security:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-cache:$springVersion"
 
-    implementation 'ch.qos.logback:logback-classic:1.4.9'
+    implementation 'ch.qos.logback:logback-classic:1.4.11'
     
     // FOR ClassNotFoundException javax.xml.bind.JAXBException
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
@@ -57,7 +57,7 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-data-rest:$springVersion"
 
     // IF USING SWAGGER
-    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
 
     // IF USING APP IN A MICROSERVICES CLUSTER WITH GATEWAY, THIS WILL LOG TRACE/SPAN
     implementation 'io.micrometer:micrometer-tracing-bridge-otel:1.1.3'
