@@ -9,9 +9,9 @@
 plugins {
     id 'application'
     id 'java'
-    id 'io.freefair.lombok' version '8.3'
-    id 'org.springframework.boot' version '3.1.3'
-    id 'com.diffplug.spotless' version '6.21.0'
+    id 'io.freefair.lombok' version '8.4'
+    id 'org.springframework.boot' version '3.2.0'
+    id 'com.diffplug.spotless' version '6.23.3'
 }
 
 java {
@@ -29,22 +29,22 @@ bootJar {
 }
 
 dependencies {
-    def springVersion = "3.1.3"
-    def junitVersion = "5.10.0"
+    def springVersion = "3.2.0"
+    def junitVersion = "5.10.1"
     
     implementation "org.springframework.boot:spring-boot-starter-actuator:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-web:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-security:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-cache:$springVersion"
 
-    implementation 'ch.qos.logback:logback-classic:1.4.11'
+    implementation 'ch.qos.logback:logback-classic:1.4.14'
     
     // FOR ClassNotFoundException javax.xml.bind.JAXBException
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
 
     // FOR REST TEMPLATE
-    implementation 'org.apache.httpcomponents.client5:httpclient5:5.2.1'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.0'
 
     // IF USING JPA
     implementation "org.springframework.boot:spring-boot-starter-data-jpa:$springVersion"
@@ -57,10 +57,10 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-data-rest:$springVersion"
 
     // IF USING SWAGGER
-    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
 
     // IF USING APP IN A MICROSERVICES CLUSTER WITH GATEWAY, THIS WILL LOG TRACE/SPAN
-    implementation 'io.micrometer:micrometer-tracing-bridge-otel:1.1.5'
+    implementation 'io.micrometer:micrometer-tracing-bridge-otel:1.2.1'
 
     // FOR TESTING
     testImplementation("org.springframework.boot:spring-boot-starter-test:$springVersion") {
