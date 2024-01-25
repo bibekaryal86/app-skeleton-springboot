@@ -43,7 +43,7 @@ dependencies {
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
 
     // FOR REST TEMPLATE
-    implementation 'org.apache.httpcomponents.client5:httpclient5:5.3'
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.3.1'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
 
     // IF USING JPA
