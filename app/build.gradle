@@ -29,7 +29,7 @@ bootJar {
 }
 
 dependencies {
-    def springVersion = "3.3.1"
+    def springVersion = "3.3.2"
     def junitVersion = "5.10.3"
     
     implementation "org.springframework.boot:spring-boot-starter-actuator:$springVersion"
