@@ -1,13 +1,17 @@
-FROM eclipse-temurin:17-jre-alpine
-RUN adduser --system --group springdocker
+# Build
+FROM gradle:8.10-jdk21-alpine AS build
+WORKDIR /app
+COPY app/build.gradle .
+COPY app/src /app/src
+RUN gradle --no-daemon clean build
+
+# Deploy
+FROM eclipse-temurin:21-jre-alpine
+RUN addgroup -S springdocker
+RUN adduser -S springdocker -G springdocker
 USER springdocker:springdocker
-ARG JAR_FILE=app/build/libs/spring-service-skeleton.jar
-COPY ${JAR_FILE} spring-service-skeleton.jar
-ENTRYPOINT ["java","-jar", \
-#"-DPORT=8080", \
-#"-DSPRING_PROFILES_ACTIVE=docker", \
-#"-DTZ=America/Denver", \
-#"-DVAR1=some_var", \
-#"-DVAR2=another_var", \
-"/spring-service-skeleton.jar"]
-# ENV variables to add in docker-compose.yml
+WORKDIR /app
+COPY --from=build /app/build/libs/spring-service-skeleton.jar .
+EXPOSE 8080
+ENTRYPOINT ["java","-jar", "spring-service-skeleton.jar"]
+# provide environment variables in docker-compose
