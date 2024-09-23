@@ -14,3 +14,4 @@ WORKDIR /app
 COPY --from=build /app/build/libs/spring-service-skeleton.jar .
 EXPOSE 8080
 ENTRYPOINT ["java","-jar", "spring-service-skeleton.jar"]
+# provide environment variables in docker-compose
