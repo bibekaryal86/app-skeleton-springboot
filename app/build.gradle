@@ -9,7 +9,7 @@
 plugins {
     id 'application'
     id 'java'
-    id 'io.freefair.lombok' version '8.10'
+    id 'io.freefair.lombok' version '8.10.2'
     id 'org.springframework.boot' version '3.3.4'
     id 'com.diffplug.spotless' version '6.25.0'
 }
@@ -32,7 +32,7 @@ bootJar {
 
 dependencies {
     def springVersion = "3.3.4"
-    def junitVersion = "5.11.1"
+    def junitVersion = "5.11.2"
     
     implementation "org.springframework.boot:spring-boot-starter-actuator:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-web:$springVersion"
