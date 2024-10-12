@@ -1,4 +1,4 @@
-runtime: java11
+runtime: java21
 env: standard
 instance_class: F2    # F1, the "free tier", does not meet JVM memory requirements
 handlers:
