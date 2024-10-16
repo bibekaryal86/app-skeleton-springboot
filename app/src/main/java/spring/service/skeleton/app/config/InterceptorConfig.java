@@ -9,7 +9,7 @@ import spring.service.skeleton.app.util.InterceptorUtilsLogging;
 public class InterceptorConfig implements WebMvcConfigurer {
 
   @Override
-  public void addInterceptors(InterceptorRegistry registry) {
+  public void addInterceptors(final InterceptorRegistry registry) {
     registry.addInterceptor(new InterceptorUtilsLogging());
   }
 }

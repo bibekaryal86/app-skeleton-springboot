@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class CommonUtils {
 
-  public static String getSystemEnvProperty(String keyName, String defaultValue) {
+  public static String getSystemEnvProperty(final String keyName, final String defaultValue) {
     String envProperty =
         System.getProperty(keyName) != null ? System.getProperty(keyName) : System.getenv(keyName);
     return envProperty == null ? defaultValue : envProperty;

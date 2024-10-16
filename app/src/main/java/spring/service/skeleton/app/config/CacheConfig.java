@@ -17,7 +17,7 @@ public class CacheConfig {
 
   private final CacheManager cacheManager;
 
-  public CacheConfig(CacheManager cacheManager) {
+  public CacheConfig(final CacheManager cacheManager) {
     this.cacheManager = cacheManager;
   }
 
