@@ -8,8 +8,8 @@ public class ConstantUtils {
 
   // provided at runtime
   public static final String SERVER_PORT = "PORT";
-  public static final String BASIC_AUTH_USR = "BASIC_AUTH_USR";
-  public static final String BASIC_AUTH_PWD = "BASIC_AUTH_PWD";
+  public static final String AUTH_USR = "AUTH_USR";
+  public static final String AUTH_PWD = "AUTH_PWD";
 
   // others
 }
