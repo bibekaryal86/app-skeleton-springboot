@@ -1,5 +1,5 @@
 # Build
-FROM gradle:8.12-jdk21-alpine AS build
+FROM gradle:8.12.1-jdk21-alpine AS build
 WORKDIR /app
 COPY app/build.gradle .
 COPY app/src /app/src
