@@ -11,7 +11,7 @@ plugins {
     id 'java'
     id 'io.freefair.lombok' version '8.13.1'
     id 'org.springframework.boot' version '3.4.4'
-    id 'com.diffplug.spotless' version '7.0.2'
+    id 'com.diffplug.spotless' version '7.0.3'
 }
 
 java {
@@ -32,7 +32,7 @@ bootJar {
 
 dependencies {
     def springVersion = "3.4.4"
-    def junitVersion = "5.12.1"
+    def junitVersion = "5.12.2"
     
     implementation "org.springframework.boot:spring-boot-starter-actuator:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-web:$springVersion"
@@ -45,7 +45,7 @@ dependencies {
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
 
     // FOR REST TEMPLATE
-    implementation 'org.apache.httpcomponents.client5:httpclient5:5.4.2'
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.4.3'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.3'
 
     // IF USING JPA
@@ -73,7 +73,7 @@ dependencies {
 
     // IF USING ELK STACK OR OTHER JSON LOGGING DRIVER
     // ALSO UPDATE LOGBACK.XML
-    implementation 'net.logstash.logback:logstash-logback-encoder:8.0'
+    implementation 'net.logstash.logback:logstash-logback-encoder:8.1'
 }
 
 application {
