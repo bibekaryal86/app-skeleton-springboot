@@ -10,7 +10,7 @@ plugins {
     id 'application'
     id 'java'
     id 'io.freefair.lombok' version '8.13.1'
-    id 'org.springframework.boot' version '3.4.4'
+    id 'org.springframework.boot' version '3.4.5'
     id 'com.diffplug.spotless' version '7.0.3'
 }
 
@@ -31,7 +31,7 @@ bootJar {
 }
 
 dependencies {
-    def springVersion = "3.4.4"
+    def springVersion = "3.4.5"
     def junitVersion = "5.12.2"
     
     implementation "org.springframework.boot:spring-boot-starter-actuator:$springVersion"
@@ -45,8 +45,8 @@ dependencies {
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
 
     // FOR REST TEMPLATE
-    implementation 'org.apache.httpcomponents.client5:httpclient5:5.4.3'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.3'
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.4.4'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.19.0'
 
     // IF USING JPA
     implementation "org.springframework.boot:spring-boot-starter-data-jpa:$springVersion"
@@ -62,7 +62,7 @@ dependencies {
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.6'
 
     // IF USING APP IN A MICROSERVICES CLUSTER WITH GATEWAY, THIS WILL LOG TRACE/SPAN
-    implementation 'io.micrometer:micrometer-tracing-bridge-otel:1.4.4'
+    implementation 'io.micrometer:micrometer-tracing-bridge-otel:1.4.5'
 
     // FOR TESTING
     testImplementation("org.springframework.boot:spring-boot-starter-test:$springVersion") {
