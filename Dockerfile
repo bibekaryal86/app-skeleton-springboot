@@ -1,5 +1,5 @@
 # Build
-FROM gradle:9.0.0-jdk-lts-and-current-alpine AS build
+FROM gradle:9.1.0-jdk-lts-and-current-alpine AS build
 WORKDIR /app
 COPY app/build.gradle .
 COPY app/src /app/src
