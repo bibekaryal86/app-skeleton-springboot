@@ -31,7 +31,7 @@ bootJar {
 }
 
 dependencies {
-    def springVersion = "4.0.0"
+    def springVersion = "4.0.1"
     def junitVersion = "6.0.1"
     
     implementation "org.springframework.boot:spring-boot-starter-actuator:$springVersion"
@@ -45,7 +45,7 @@ dependencies {
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
 
     // FOR REST TEMPLATE
-    implementation 'org.apache.httpcomponents.client5:httpclient5:5.5.1'
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.6'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.20.1'
 
     // IF USING JPA
@@ -62,7 +62,7 @@ dependencies {
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:3.0.0'
 
     // IF USING APP IN A MICROSERVICES CLUSTER WITH GATEWAY, THIS WILL LOG TRACE/SPAN
-    implementation 'io.micrometer:micrometer-tracing-bridge-otel:1.6.0'
+    implementation 'io.micrometer:micrometer-tracing-bridge-otel:1.6.1'
 
     // FOR TESTING
     testImplementation("org.springframework.boot:spring-boot-starter-test:$springVersion") {
