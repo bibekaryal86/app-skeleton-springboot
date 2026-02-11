@@ -42,7 +42,7 @@ dependencies {
     implementation 'ch.qos.logback:logback-classic:1.5.29'
     
     // FOR ClassNotFoundException javax.xml.bind.JAXBException
-    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    implementation 'javax.xml.bind:jaxb-api:2.4.0-b180830.0359'
 
     // FOR REST TEMPLATE
     implementation 'org.apache.httpcomponents.client5:httpclient5:5.6'
