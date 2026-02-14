@@ -62,7 +62,7 @@ dependencies {
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:3.0.1'
 
     // IF USING APP IN A MICROSERVICES CLUSTER WITH GATEWAY, THIS WILL LOG TRACE/SPAN
-    implementation 'io.micrometer:micrometer-tracing-bridge-otel:1.6.1'
+    implementation 'io.micrometer:micrometer-tracing-bridge-otel:1.6.3'
 
     // FOR TESTING
     testImplementation("org.springframework.boot:spring-boot-starter-test:$springVersion") {
