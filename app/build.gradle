@@ -32,21 +32,21 @@ bootJar {
 
 dependencies {
     def springVersion = "4.0.3"
-    def junitVersion = "6.0.2"
+    def junitVersion = "6.0.3"
     
     implementation "org.springframework.boot:spring-boot-starter-actuator:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-web:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-security:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-cache:$springVersion"
 
-    implementation 'ch.qos.logback:logback-classic:1.5.29'
+    implementation 'ch.qos.logback:logback-classic:1.5.32'
     
     // FOR ClassNotFoundException javax.xml.bind.JAXBException
     implementation 'javax.xml.bind:jaxb-api:2.4.0-b180830.0359'
 
     // FOR REST TEMPLATE
     implementation 'org.apache.httpcomponents.client5:httpclient5:5.6'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.21.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.21.1'
 
     // IF USING JPA
     implementation "org.springframework.boot:spring-boot-starter-data-jpa:$springVersion"
