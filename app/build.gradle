@@ -31,7 +31,7 @@ bootJar {
 }
 
 dependencies {
-    def springVersion = "4.0.5"
+    def springVersion = "4.0.6"
     def junitVersion = "6.0.3"
     
     implementation "org.springframework.boot:spring-boot-starter-actuator:$springVersion"
@@ -62,7 +62,7 @@ dependencies {
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:3.0.3'
 
     // IF USING APP IN A MICROSERVICES CLUSTER WITH GATEWAY, THIS WILL LOG TRACE/SPAN
-    implementation 'io.micrometer:micrometer-tracing-bridge-otel:1.6.3'
+    implementation 'io.micrometer:micrometer-tracing-bridge-otel:1.6.5'
 
     // FOR TESTING
     testImplementation("org.springframework.boot:spring-boot-starter-test:$springVersion") {
