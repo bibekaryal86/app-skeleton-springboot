@@ -39,14 +39,14 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-security:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-cache:$springVersion"
 
-    implementation 'ch.qos.logback:logback-classic:1.5.34'
+    implementation 'ch.qos.logback:logback-classic:1.5.37'
     
     // FOR ClassNotFoundException javax.xml.bind.JAXBException
     implementation 'javax.xml.bind:jaxb-api:2.4.0-b180830.0359'
 
     // FOR REST TEMPLATE
     implementation 'org.apache.httpcomponents.client5:httpclient5:5.6.1'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.21.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.22.0'
 
     // IF USING JPA
     implementation "org.springframework.boot:spring-boot-starter-data-jpa:$springVersion"
@@ -62,7 +62,7 @@ dependencies {
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:3.0.3'
 
     // IF USING APP IN A MICROSERVICES CLUSTER WITH GATEWAY, THIS WILL LOG TRACE/SPAN
-    implementation 'io.micrometer:micrometer-tracing-bridge-otel:1.6.5'
+    implementation 'io.micrometer:micrometer-tracing-bridge-otel:1.7.0'
 
     // FOR TESTING
     testImplementation("org.springframework.boot:spring-boot-starter-test:$springVersion") {
