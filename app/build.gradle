@@ -39,13 +39,13 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-security:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-cache:$springVersion"
 
-    implementation 'ch.qos.logback:logback-classic:1.5.37'
+    implementation 'ch.qos.logback:logback-classic:1.6.1'
     
     // FOR ClassNotFoundException javax.xml.bind.JAXBException
     implementation 'javax.xml.bind:jaxb-api:2.4.0-b180830.0359'
 
     // FOR REST TEMPLATE
-    implementation 'org.apache.httpcomponents.client5:httpclient5:5.6.2'
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.6.3'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.22.1'
 
     // IF USING JPA
